@@ -1,0 +1,9 @@
+This is a short list used to keep track of things that still need to be done.
+
+Please remove any todos in the commit where you fix it!
+
+TODOs:
+	> Add exmaple app using widets
+	> Add "Vehicle signal" object (for receiving can messages)
+	> Rename poorly named (public) classes, methods and properties
+	> Add plugins system for softkeys

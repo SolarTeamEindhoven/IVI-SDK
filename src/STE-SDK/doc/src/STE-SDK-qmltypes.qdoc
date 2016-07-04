@@ -1,0 +1,22 @@
+/*!
+  \qmlmodule solarteameindhoven.sdk 1.0
+  \title STE SDK QML Types
+  \ingroup qmlmodules
+  \brief Provides QML types for using the STE SDK.
+
+  The QML types can be imported into your application using the following
+  import statement:
+
+  \code
+  import solarteameindhoven.sdk 1.0
+  \endcode
+
+  To link against the module, add this line to your \l qmake \c .pro file:
+
+  \code
+  QT += STE-SDK
+  \endcode
+
+  For more information about using these types in your application,
+  see the \l{STE SDK} documentation.
+*/
