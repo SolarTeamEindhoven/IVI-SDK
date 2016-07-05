@@ -1,0 +1,20 @@
+<package>
+	<name lang="en_US">Test APP</name>
+	<description lang="en_US">This is just a simple test app to test the functionality of the IVI system.</description>
+<!--	<icon lang=""></icon> -->
+	<authors>
+		<author>
+			<name>Steven van der Schoot</name>
+			<email>steven.vanderschoot@solarteameindhoven.nl</email>
+			<company website="http://solarteameindhoven.nl">Solar Team Eindhoven</company>
+		</author>
+	</authors>
+	<website></website>
+	<categories>
+		<category>Test</category>
+	</categories>
+	<run>
+		<executable>TestApp</executable>
+		<argument>-platform wayland</argument>
+	</run>
+</package>

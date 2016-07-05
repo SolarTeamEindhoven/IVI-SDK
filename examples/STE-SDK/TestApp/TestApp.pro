@@ -6,5 +6,7 @@ SOURCES += main.cpp
 
 RESOURCES += qml.qrc
 
+DISTFILES += MANIFEST
+
 target.path = $$[QT_INSTALL_EXAMPLES]/STE-SDK/TestApp
 INSTALLS += target

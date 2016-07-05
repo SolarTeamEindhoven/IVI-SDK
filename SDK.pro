@@ -1,5 +1,5 @@
 load(configure)
 
-SDKMODULE_BUILD_PARTS = examples
+SDK_BUILD_PARTS = examples
 
 load(qt_parts)
