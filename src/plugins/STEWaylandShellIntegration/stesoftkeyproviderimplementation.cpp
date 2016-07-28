@@ -29,7 +29,7 @@ STESoftKey* STESoftKeyProviderImplementation::createSoftKey(QWindow* window, STE
     if(window == nullptr)
     {
         struct ::ste_softkey* softkey = shell->create_ste_softkey(descriptor->id);
-        return new STESoftKeyWayland(softkey, descriptor);
+        return new STESoftKeyWayland(false, softkey, descriptor);
     }
     else
     {
@@ -37,7 +37,7 @@ STESoftKey* STESoftKeyProviderImplementation::createSoftKey(QWindow* window, STE
         QtWaylandClient::QWaylandWindow* waylandWindow = static_cast<QtWaylandClient::QWaylandWindow*>(platformWindow);
         struct ::wl_surface* surface = static_cast<QtWayland::wl_surface *>(waylandWindow)->object();
         struct ::ste_softkey* softkey = shell->create_ste_softkey_with_surface(descriptor->id, surface);
-        return new STESoftKeyWayland(softkey, descriptor);
+        return new STESoftKeyWayland(true, softkey, descriptor);
     }
 }
 

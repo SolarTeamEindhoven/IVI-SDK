@@ -13,10 +13,9 @@ class STESoftKeyWayland : public STESoftKey,  public QtWayland::ste_softkey
     Q_OBJECT
 
 public:
-    STESoftKeyWayland(struct ::ste_softkey* softkeyObj, STESoftKeyDescriptor* descriptor);
+    STESoftKeyWayland(bool hasSurface, struct ::ste_softkey* softkeyObj, STESoftKeyDescriptor* descriptor);
 
-public slots:
-    void setSurface();
+    bool isVisual() const Q_DECL_OVERRIDE;
 
 protected:
     void ste_softkey_state_changed(uint32_t state) Q_DECL_OVERRIDE;
@@ -26,6 +25,7 @@ protected:
 
 private:
     bool initialized;
+    bool hasSurface;
 };
 
 #endif // STESOFTKEY_H

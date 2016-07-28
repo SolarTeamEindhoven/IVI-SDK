@@ -24,7 +24,6 @@ App
 
         width: hintSize.width
         height: hintSize.height
-        visible: true
 
         hintList: ["LAYR_left", "left"]
 
@@ -47,6 +46,16 @@ App
                 ColorAnimation { target: rect; property: "color"; to: "red"; duration: 1000 }
                 ColorAnimation { target: rect; property: "color"; to: "green"; duration: 1000 }
             }
+        }
+    }
+
+    SoftKey {
+        id: rightButton
+
+        hintList: ["LAYR_right", "right"]
+
+        onClicked: {
+            console.log("Right button clicked!");
         }
     }
 

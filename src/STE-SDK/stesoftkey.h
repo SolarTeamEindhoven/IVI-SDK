@@ -18,9 +18,7 @@ public:
     STESoftKeyDescriptor* getDescriptor();
     qreal getRotationAngle() const;
     int getRotationTicks() const;
-    QWindow* getVisuals() const;
-
-    void setVisuals(QWindow* window);
+    virtual bool isVisual() const = 0;
 
     static const QList<STESoftKey*>& getSoftKeyList();
 
@@ -35,7 +33,6 @@ protected:
 
 private:
     STESoftKeyDescriptor* descriptor;
-    QWindow* window;
 };
 
 Q_DECLARE_METATYPE(STESoftKey*)

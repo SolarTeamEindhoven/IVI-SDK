@@ -12,7 +12,7 @@ STESoftKeyVisualQml::STESoftKeyVisualQml(QWindow* parent)
     setColor(QColor(0, 0, 0, 0));
     setFlags(flags() | Qt::BypassWindowManagerHint);
     connect(STESoftKeyProviderWrapper::getInstance(), &STESoftKeyProviderWrapper::softkeyDescriptorsChanged, this, &STESoftKeyVisualQml::updateSoftkeyProperty);
-//    show();
+    setVisible(false);
 }
 
 void STESoftKeyVisualQml::setHintList(const QStringList& newHintList)
@@ -27,8 +27,6 @@ void STESoftKeyVisualQml::setHintList(const QStringList& newHintList)
 
 void STESoftKeyVisualQml::updateSoftkeyProperty()
 {
-    qDebug() << "Updating softkey using hints:" << hintList.join("; ");
-
     STESoftKeyDescriptor* descriptor = selectSoftKey();
 
     if(descriptor == nullptr)
@@ -36,8 +34,6 @@ void STESoftKeyVisualQml::updateSoftkeyProperty()
 
     if(softkey && descriptor == softkey->getDescriptor())
         return;
-
-    qDebug() << "Using softkey:" << descriptor->hint;
 
     STESoftKey* newSoftkey = STESoftKeyProviderWrapper::getInstance()->createSoftKey(static_cast<QWindow*>(this), descriptor);
 
@@ -53,6 +49,9 @@ void STESoftKeyVisualQml::updateSoftkeyProperty()
     }
 
     softkey = newSoftkey;
+
+    setVisible(softkey->isVisual());
+
     connect(softkey, &STESoftKey::clicked, this, &STESoftKeyVisualQml::clicked);
     connect(softkey, &STESoftKey::rotated, this, &STESoftKeyVisualQml::rotated);
     connect(softkey, &STESoftKey::resizeHint, this, &STESoftKeyVisualQml::resizeSoftkey);

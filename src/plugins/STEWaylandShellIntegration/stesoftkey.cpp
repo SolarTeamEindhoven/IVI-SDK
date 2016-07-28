@@ -5,17 +5,17 @@
 
 #include <QDebug>
 
-STESoftKeyWayland::STESoftKeyWayland(struct ::ste_softkey* softkeyObj, STESoftKeyDescriptor* descriptor)
+STESoftKeyWayland::STESoftKeyWayland(bool hasSurface, struct ::ste_softkey* softkeyObj, STESoftKeyDescriptor* descriptor)
     : STESoftKey(descriptor)
     , QtWayland::ste_softkey(softkeyObj)
+    , hasSurface(hasSurface)
 {
     ;
 }
 
-void STESoftKeyWayland::setSurface()
+bool STESoftKeyWayland::isVisual() const
 {
-//    struct ::wl_surface* surface_wl = nullptr;
-//    set_surface(surface_wl);
+    return hasSurface;
 }
 
 void STESoftKeyWayland::ste_softkey_state_changed(uint32_t state)
