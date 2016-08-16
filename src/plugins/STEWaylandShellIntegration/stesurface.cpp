@@ -32,7 +32,7 @@ STESurface::~STESurface()
 
 void STESurface::ste_shell_surface_configure(uint32_t width, uint32_t height, uint32_t state)
 {
-    // TODO: Little hack to keep insane big numbers out during initialization
+    // TODO: Little hack to keep insane big numbers (during initialization) out
     if(width > 1024*1024)
         return;
     if(height > 1024*1024)

@@ -57,7 +57,23 @@ QtWaylandClient::QWaylandShellSurface* STEShellIntegration::createShellSurface(Q
     struct ste_shell_surface* surface = shell->create_ste_shell_surface(waylandWindow->object());
 //    struct ivi_surface *surface = shell->surface_create(surfaceId, window->object());
     //if (!m_iviController)
-        return new STESurface(surface, waylandWindow);
+    {
+        mutex2.lock();
+        STESurface* shellSurface = nullptr;
+        auto it = shellSurfaces.find(waylandWindow);
+        if(it == shellSurfaces.end())
+        {
+            qDebug() << "Reusing shell surface!";
+            shellSurface = *it;
+        }
+        else
+        {
+            shellSurface = new STESurface(surface, waylandWindow);
+            shellSurfaces.insert(waylandWindow, shellSurface);
+        }
+        mutex2.unlock();
+        return shellSurface;
+    }
 
     /*
     if (window->window()->type() == Qt::Popup) {

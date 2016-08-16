@@ -4,9 +4,12 @@
 #include <qglobal.h>
 
 #include <QtWaylandClient/private/qwaylandshellintegration_p.h>
+#include <QMutex>
 
 #include "customextension.h"
 #include "stesoftkeyproviderimplementation.h"
+
+class STESurface;
 
 class STEShellIntegration : public QtWaylandClient::QWaylandShellIntegration
 {
@@ -26,6 +29,8 @@ private:
     uint32_t lastSurfaceId;
     QMutex mutex;
     QList<QWindow*> softKeyWindows;
+    QMap<QtWaylandClient::QWaylandWindow*, STESurface*> shellSurfaces;
+    QMutex mutex2;
 
     uint32_t getNextUniqueSurfaceId();
 
