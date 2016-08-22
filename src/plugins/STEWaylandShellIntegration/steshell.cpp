@@ -60,17 +60,17 @@ QtWaylandClient::QWaylandShellSurface* STEShellIntegration::createShellSurface(Q
     {
         mutex2.lock();
         STESurface* shellSurface = nullptr;
+
         auto it = shellSurfaces.find(waylandWindow);
-        if(it == shellSurfaces.end())
+        if(it != shellSurfaces.end())
         {
-            qDebug() << "Reusing shell surface!";
+            qDebug() << "Already created a Shell surface for this particular window previously!!!";
             shellSurface = *it;
         }
-        else
-        {
-            shellSurface = new STESurface(surface, waylandWindow);
-            shellSurfaces.insert(waylandWindow, shellSurface);
-        }
+
+        shellSurface = new STESurface(surface, waylandWindow);
+        shellSurfaces.insert(waylandWindow, shellSurface);
+
         mutex2.unlock();
         return shellSurface;
     }
