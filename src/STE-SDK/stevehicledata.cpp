@@ -3,10 +3,14 @@
 #include "stedbusmanager_p.h"
 #include "stedbusvehicledata_p.h"
 
+#include <QDebug>
+
 QT_BEGIN_NAMESPACE
 
 STEVehicleData::STEVehicleData(QObject* parent)
     : QObject(parent)
+    , key(QString::null)
+    , dbusVehicleData(nullptr)
 {
 
 }
@@ -20,6 +24,7 @@ void STEVehicleData::setKey(const QString& newKey)
 
     if(dbusVehicleData != nullptr)
     {
+        qDebug() << "Deleting old DBUS object!";
         wasAvailable = true;
         dbusVehicleData->unregisterVicleDataObject(this);
         disconnect();
@@ -27,6 +32,7 @@ void STEVehicleData::setKey(const QString& newKey)
 
     key = newKey;
 
+    qDebug() << "Creating new vehicle data object...";
     dbusVehicleData = STEDbusManager::instance()->getDBusVehicleData(key);
     dbusVehicleData->registerVicleDataObject(this);
     connect(dbusVehicleData, &STEDBusVehicleData::valueChanged, this, &STEVehicleData::valueChanged);
@@ -37,7 +43,7 @@ void STEVehicleData::setKey(const QString& newKey)
         emit isAvailableChanged();
 }
 
-const QVariant& STEVehicleData::getValue()
+QVariant STEVehicleData::getValue()
 {
     if(dbusVehicleData == nullptr)
         return QVariant();

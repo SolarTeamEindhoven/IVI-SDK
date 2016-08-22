@@ -25,7 +25,7 @@ public:
     void setKey(const QString& key);
     bool isAvailable() const {return dbusVehicleData != nullptr;}
 
-    const QVariant& getValue();
+    QVariant getValue();
 
 signals:
     void keyChanged();
