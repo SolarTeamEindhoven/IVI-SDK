@@ -34,8 +34,11 @@ void STEVehicleData::setKey(const QString& newKey)
 
     qDebug() << "Creating new vehicle data object...";
     dbusVehicleData = STEDbusManager::instance()->getDBusVehicleData(key);
-    dbusVehicleData->registerVicleDataObject(this);
-    connect(dbusVehicleData, &STEDBusVehicleData::valueChanged, this, &STEVehicleData::valueChanged);
+    if(dbusVehicleData != nullptr)
+    {
+        dbusVehicleData->registerVicleDataObject(this);
+        connect(dbusVehicleData, &STEDBusVehicleData::valueChanged, this, &STEVehicleData::valueChanged);
+    }
 
     emit keyChanged();
 
