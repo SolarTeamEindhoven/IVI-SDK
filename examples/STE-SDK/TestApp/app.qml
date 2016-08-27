@@ -6,19 +6,6 @@ App
 {
     id: app
 
-    onSoftKeyListChanged: {
-        console.log("Amount of softkeys: ", app.softKeyList.length);
-        for(var i in app.softKeyList) {
-            console.log("Softkey " + i + ": ", app.softKeyList[i].hint);
-
-            switch(app.softKeyList[i].hint) {
-            case "LAYR_left":
-                leftButton.softkey = app.softKeyList[i];
-                break;
-            }
-        }
-    }
-
     SoftKeyVisual {
         id: leftButton
 

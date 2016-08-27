@@ -10,18 +10,18 @@ class STESoftKey;
 class STEApp : public QQuickControl //QQuickItem
 {
     Q_OBJECT
-    Q_PROPERTY(QQmlListProperty<STESoftKey> softKeyList READ getSoftKeyList NOTIFY softKeyListChanged)
+//    Q_PROPERTY(QQmlListProperty<STESoftKey> softKeyList READ getSoftKeyList NOTIFY softKeyListChanged)
 
 public:
     explicit STEApp(QQuickItem* parent = Q_NULLPTR);
     ~STEApp();
 
-    QQmlListProperty<STESoftKey> getSoftKeyList();
+//    QQmlListProperty<STESoftKey> getSoftKeyList();
 
     static const QList<STEApp*>& getAppList();
 
-Q_SIGNALS:
-    void softKeyListChanged();
+//Q_SIGNALS:
+//    void softKeyListChanged();
 };
 
 QT_END_NAMESPACE

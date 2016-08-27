@@ -12,7 +12,7 @@ STEApp::STEApp(QQuickItem *parent)
 {
     STEAppList.append(this);
 
-    connect(STEShellManager::instance(), &STEShellManager::newSoftKey, this, &STEApp::softKeyListChanged);
+//    connect(STEShellManager::instance(), &STEShellManager::newSoftKey, this, &STEApp::softKeyListChanged);
     // TODO: Connect some signal to STEApp::softKeyListChanged signal
 }
 
@@ -20,7 +20,7 @@ STEApp::~STEApp()
 {
     STEAppList.removeOne(this);
 }
-
+/*
 static int count(QQmlListProperty<STESoftKey>*)
 {
     return STESoftKey::getSoftKeyList().count();
@@ -35,6 +35,7 @@ QQmlListProperty<STESoftKey> STEApp::getSoftKeyList()
 {
     return QQmlListProperty<STESoftKey>(this, nullptr, count, at);
 }
+*/
 
 const QList<STEApp*>& STEApp::getAppList()
 {
