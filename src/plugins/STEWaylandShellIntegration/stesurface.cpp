@@ -55,3 +55,30 @@ void STESurface::ste_shell_surface_broadcast_available_softkey(uint32_t softkey_
 //    STESoftKeyWayland* softKey = new STESoftKeyWayland(this, softkey_id, hint);
 //    emit STEShellManager::instance()->newSoftKey(softKey);
 }
+
+void STESurface::setType(Qt::WindowType type, QtWaylandClient::QWaylandWindow *transientParent)
+{
+    // TODO
+    Q_UNUSED(type);
+    Q_UNUSED(transientParent);
+}
+
+void STESurface::setMaximized()
+{
+    QtWayland::ste_shell_surface::resize(state_maximal);
+}
+
+void STESurface::setFullscreen()
+{
+    ; // TODO
+}
+
+void STESurface::setNormal()
+{
+    QtWayland::ste_shell_surface::resize(state_normal);
+}
+
+void STESurface::setMinimized()
+{
+    QtWayland::ste_shell_surface::resize(state_minimal);
+}
