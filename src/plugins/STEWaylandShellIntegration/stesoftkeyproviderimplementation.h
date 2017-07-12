@@ -1,7 +1,7 @@
 #ifndef STESOFTKEYPROVIDERIMPLEMENTATION_H
 #define STESOFTKEYPROVIDERIMPLEMENTATION_H
 
-#include <STE-SDK/STESoftKeyProvider>
+#include <IVI-SDK/STESoftKeyProvider>
 
 class STESoftKeyProviderImplementation : public STESoftKeyProvider
 {

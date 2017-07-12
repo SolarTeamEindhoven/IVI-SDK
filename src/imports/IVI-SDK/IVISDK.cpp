@@ -1,12 +1,12 @@
 #include <QtQml/QQmlExtensionPlugin>
-#include <STE-SDK/STESoftKey>
-#include <STE-SDK/STEVehicleData>
+#include <IVI-SDK/STESoftKey>
+#include <IVI-SDK/STEVehicleData>
 
 #include "steapp.h"
 #include "stesoftkeyqml.h"
 #include "stesoftkeyvisualqml.h"
 
-class STESDKModule : public QQmlExtensionPlugin
+class IVISDKModule : public QQmlExtensionPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface/1.0")
@@ -28,4 +28,4 @@ public:
     }
 };
 
-#include "STESDK.moc"
+#include "IVISDK.moc"

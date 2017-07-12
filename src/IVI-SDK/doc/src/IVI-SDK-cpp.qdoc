@@ -1,23 +1,23 @@
 /*!
-  \module STE-SDK
-  \title STE-SDK C++ Classes
+  \module IVI-SDK
+  \title IVI-SDK C++ Classes
   \ingroup modules
-  \qtvariable STE-SDK
+  \qtvariable IVI-SDK
 
   \brief Provides C++ classes for using STE SDK.
 
   To include the definitions of the module's classes, use the following directive:
 
   \code
-  #include <STE-SDK>
+  #include <IVI-SDK>
   \endcode
 
   To link against the module, add this line to your \l qmake \c .pro file:
 
   \code
-  QT += STE-SDK
+  QT += IVI-SDK
   \endcode
 
   For more information about using these classes in your application,
-  see the \l{STE-SDK} documentation.
+  see the \l{IVI-SDK} documentation.
 */

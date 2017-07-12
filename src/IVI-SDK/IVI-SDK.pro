@@ -1,11 +1,11 @@
-TARGET     = STE-SDK
+TARGET     = IVI-SDK
 QT         = core dbus
 
 load(qt_module)
 
-DEFINES += QT_BUILD_STE_SDK_LIB
+DEFINES += QT_BUILD_IVI_SDK_LIB
 
-QMAKE_DOCS = $$PWD/doc/STE-SDK.qdocconf
+QMAKE_DOCS = $$PWD/doc/IVI-SDK.qdocconf
 
 DBUS_INTERFACES += ../protocol/DBUSManager.xml ../protocol/DBUSVehicleData.xml
 

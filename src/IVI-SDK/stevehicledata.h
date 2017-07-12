@@ -5,13 +5,13 @@
 #include <QString>
 #include <QVariant>
 
-#include <STE-SDK/qtstesdkglobal.h>
+#include <IVI-SDK/qtstesdkglobal.h>
 
 QT_BEGIN_NAMESPACE
 
 class STEDBusVehicleData;
 
-class Q_STE_SDK_EXPORT STEVehicleData : public QObject
+class Q_IVI_SDK_EXPORT STEVehicleData : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString key READ getKey WRITE setKey NOTIFY keyChanged)

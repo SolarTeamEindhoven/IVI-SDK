@@ -1,5 +1,5 @@
 %modules = ( # path to module name map
-    "STE-SDK" => "$basedir/src/STE-SDK",
+    "IVI-SDK" => "$basedir/src/IVI-SDK",
 );
 %moduleheaders = ( # restrict the module headers to those found in relative path
 );

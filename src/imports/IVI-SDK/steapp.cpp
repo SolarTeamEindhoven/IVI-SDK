@@ -2,8 +2,8 @@
 
 #include <QtQml/QQmlListProperty>
 
-#include <STE-SDK/STESoftKey>
-#include <STE-SDK/STEShellManager>
+#include <IVI-SDK/STESoftKey>
+#include <IVI-SDK/STEShellManager>
 
 static QList<STEApp*> STEAppList;
 

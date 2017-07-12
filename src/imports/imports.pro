@@ -1,2 +1,2 @@
 TEMPLATE = subdirs
-SUBDIRS += STE-SDK
+SUBDIRS += IVI-SDK

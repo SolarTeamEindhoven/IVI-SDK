@@ -5,15 +5,15 @@
 
 QT_BEGIN_NAMESPACE
 
-#ifndef Q_STE_SDK_EXPORT
+#ifndef Q_IVI_SDK_EXPORT
 #  ifndef QT_STATIC
-#    if defined(QT_BUILD_STE_SDK_LIB)
-#      define Q_STE_SDK_EXPORT Q_DECL_EXPORT
+#    if defined(QT_BUILD_IVI_SDK_LIB)
+#      define Q_IVI_SDK_EXPORT Q_DECL_EXPORT
 #    else
-#      define Q_STE_SDK_EXPORT Q_DECL_IMPORT
+#      define Q_IVI_SDK_EXPORT Q_DECL_IMPORT
 #    endif
 #  else
-#    define Q_STE_SDK_EXPORT
+#    define Q_IVI_SDK_EXPORT
 #  endif
 #endif
 

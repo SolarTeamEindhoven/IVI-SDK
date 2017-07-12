@@ -1,0 +1,50 @@
+include($QT_INSTALL_DOCS/global/qt-module-defaults.qdocconf)
+
+project                                         = IVI-SDK
+description                                     = Solar Team Eindhoven SDK Reference Documentation
+version                                         = $QT_VERSION
+
+examplesinstallpath                             = IVI-SDK
+
+qhp.projects                                       = IVI-SDK
+
+qhp.IVI-SDK.file                              = IVI-SDK.qhp
+qhp.IVI-SDK.namespace                         = org.qt-project.IVI-SDK.$QT_VERSION_TAG
+qhp.IVI-SDK.virtualFolder                     = IVI-SDK
+qhp.IVI-SDK.indexTitle                        = STE SDK
+qhp.IVI-SDK.indexRoot                         =
+qhp.IVI-SDK.filterAttributes                  = IVI-SDK $QT_VERSION qtrefdoc
+qhp.IVI-SDK.customFilters.Qt.name             = IVI-SDK $QT_VERSION
+qhp.IVI-SDK.customFilters.Qt.filterAttributes = IVI-SDK $QT_VERSION
+
+qhp.IVI-SDK.subprojects                       = qmltypes classes examples
+qhp.IVI-SDK.subprojects.qmltypes.title        = QML Types
+qhp.IVI-SDK.subprojects.qmltypes.indexTitle   = STE SDK QML Types
+qhp.IVI-SDK.subprojects.qmltypes.selectors    = qmlclass
+qhp.IVI-SDK.subprojects.qmltypes.sortPages    = true
+qhp.IVI-SDK.subprojects.classes.title         = C++ Classes
+qhp.IVI-SDK.subprojects.classes.indexTitle    = STE SDK C++ Classes
+qhp.IVI-SDK.subprojects.classes.selectors     = class fake:headerfile
+qhp.IVI-SDK.subprojects.classes.sortPages     = true
+qhp.IVI-SDK.subprojects.examples.title        = Examples
+qhp.IVI-SDK.subprojects.examples.indexTitle   = STE SDK Examples
+qhp.IVI-SDK.subprojects.examples.selectors    = fake:example
+qhp.IVI-SDK.subprojects.examples.sortPages    = true
+
+
+headerdirs += ../ \
+              ../../plugins
+
+sourcedirs += ../ \
+              ../../plugins
+
+exampledirs += ../../../examples
+
+imagedirs  += images
+
+Cpp.ignoretokens         += Q_IVI_SDK_EXPORT
+Cpp.ignoredirectives     += Q_DECLARE_LOGGING_CATEGORY
+
+navigation.landingpage    = "STE SDK"
+navigation.qmltypespage   = "STE SDK QML Types"
+navigation.cppclassespage = "STE SDK C++ Classes"

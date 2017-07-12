@@ -1,6 +1,6 @@
 /*!
-  \page STE-SDK-index.html
-  \title STE-SDK
+  \page IVI-SDK-index.html
+  \title IVI-SDK
   \brief A cross-platform library for developing IVI applications using Qt and Qt Quick.
 
   STE SDK is an add-on library that enables Qt applications to make full
@@ -10,7 +10,7 @@
   \section1 Examples
 
   The \l{STE SDK Examples}{examples} demonstrate the use of the QML and C++
-  APIs of the STE-SDK module.
+  APIs of the IVI-SDK module.
 
   \section1 API Reference
 

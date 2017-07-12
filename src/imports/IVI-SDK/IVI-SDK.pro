@@ -1,14 +1,14 @@
-CXX_MODULE = STE-SDK
-TARGET  = declarative_STE-SDK
+CXX_MODULE = IVI-SDK
+TARGET  = declarative_IVI-SDK
 TARGETPATH = solarteameindhoven/sdk
 IMPORT_VERSION = 1.0
 
-QT += qml quick quicktemplates2-private STE-SDK
+QT += qml quick quicktemplates2-private IVI-SDK
 
 OTHER_FILES += qmldir
 
 SOURCES += \
-    STESDK.cpp \
+    IVISDK.cpp \
     steapp.cpp \
     stesoftkeyqml.cpp \
     stesoftkeyvisualqml.cpp

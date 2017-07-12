@@ -17,7 +17,7 @@ load(qt_plugin)
 CONFIG += wayland-scanner
 CONFIG += link_pkgconfig
 
-QT += STE-SDK waylandclient-private
+QT += IVI-SDK waylandclient-private
 !contains(QT_CONFIG, no-pkg-config) {
     PKGCONFIG += wayland-client
 } else {

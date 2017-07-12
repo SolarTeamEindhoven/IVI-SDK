@@ -1,4 +1,4 @@
-QT += qml quick STE-SDK
+QT += qml quick IVI-SDK
 
 CONFIG += c++11
 
@@ -8,5 +8,5 @@ RESOURCES += qml.qrc
 
 DISTFILES += MANIFEST
 
-target.path = $$[QT_INSTALL_EXAMPLES]/STE-SDK/TestApp
+target.path = $$[QT_INSTALL_EXAMPLES]/IVI-SDK/TestApp
 INSTALLS += target

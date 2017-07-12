@@ -3,20 +3,20 @@
 
 #include <QObject>
 
-#include <STE-SDK/qtstesdkglobal.h>
+#include <IVI-SDK/qtstesdkglobal.h>
 
 QT_BEGIN_NAMESPACE
 
 class STESoftKey;
 class QWindow;
 
-struct Q_STE_SDK_EXPORT STESoftKeyDescriptor
+struct Q_IVI_SDK_EXPORT STESoftKeyDescriptor
 {
     uint32_t id;
     QString hint;
 };
 
-class Q_STE_SDK_EXPORT STESoftKeyProvider : public QObject
+class Q_IVI_SDK_EXPORT STESoftKeyProvider : public QObject
 {
     Q_OBJECT
 public:
@@ -29,7 +29,7 @@ Q_SIGNALS:
     void softKeyDescriptorsChanged();
 };
 
-class Q_STE_SDK_EXPORT STESoftKeyProviderWrapper : public QObject
+class Q_IVI_SDK_EXPORT STESoftKeyProviderWrapper : public QObject
 {
     Q_OBJECT
 public:

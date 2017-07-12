@@ -1,11 +1,11 @@
 TEMPLATE = subdirs
 CONFIG += ordered
 SUBDIRS += \
-    STE-SDK \
+    IVI-SDK \
     plugins
 
 qtHaveModule(quick) {
     src_imports.subdir = imports
-    src_imports.depends = STE-SDK
+    src_imports.depends = IVI-SDK
     SUBDIRS += src_imports
 }

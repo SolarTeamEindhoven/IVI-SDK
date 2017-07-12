@@ -3,14 +3,14 @@
 
 #include <QtCore/QObject>
 
-#include <STE-SDK/qtstesdkglobal.h>
+#include <IVI-SDK/qtstesdkglobal.h>
 
 QT_BEGIN_NAMESPACE
 
 class STESoftKeyDescriptor;
 class QWindow;
 
-class Q_STE_SDK_EXPORT STESoftKey : public QObject
+class Q_IVI_SDK_EXPORT STESoftKey : public QObject
 {
     Q_OBJECT
 

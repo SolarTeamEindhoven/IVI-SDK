@@ -1,6 +1,6 @@
 #include "stesoftkeyinterface.h"
 
-#include <STE-SDK/STESoftKey>
+#include <IVI-SDK/STESoftKey>
 
 STESoftKeyInterface::STESoftKeyInterface(QObject *parent)
     : QObject(parent)
