@@ -95,6 +95,17 @@ QtWaylandClient::QWaylandShellSurface* STEShellIntegration::createShellSurface(Q
     */
 }
 
+STESurface* STEShellIntegration::getSTESurface(QWindow* window) const
+{
+    QPlatformWindow* platformWindow = window->handle();
+    QtWaylandClient::QWaylandWindow* unsafe_waylandWindow = static_cast<QtWaylandClient::QWaylandWindow*>(platformWindow);
+    auto it = shellSurfaces.find(unsafe_waylandWindow);
+    if(it == shellSurfaces.end())
+        return nullptr;
+    else
+        return it.value();
+}
+
 void STEShellIntegration::registerWindowAsSoftKey(QWindow* window)
 {
     softKeyWindows.append(window);
@@ -102,10 +113,8 @@ void STEShellIntegration::registerWindowAsSoftKey(QWindow* window)
 
 STEShellIntegration* STEShellIntegration::getInstance()
 {
-    if(instance == nullptr)
-        instance = new STEShellIntegration();
-
-    return instance;
+    static STEShellIntegration shellIntegration;
+    return &shellIntegration;
 }
 
 uint32_t STEShellIntegration::getNextUniqueSurfaceId()

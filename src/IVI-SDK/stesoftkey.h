@@ -15,10 +15,19 @@ class Q_IVI_SDK_EXPORT STESoftKey : public QObject
     Q_OBJECT
 
 public:
+    enum class State {
+        Invalid,
+        Active,
+        InActive,
+        OutOfScope
+    };
+    Q_ENUM(State)
+
     STESoftKeyDescriptor* getDescriptor();
     qreal getRotationAngle() const;
     int getRotationTicks() const;
     virtual bool isVisual() const = 0;
+    virtual State getState() const = 0;
 
     static const QList<STESoftKey*>& getSoftKeyList();
 
@@ -26,6 +35,7 @@ Q_SIGNALS:
     void clicked();
     void rotated();
     void resizeHint(unsigned int width, unsigned int height);
+    void stateChanged();
 
 protected:
     explicit STESoftKey(STESoftKeyDescriptor* descriptor, QObject *parent = nullptr);

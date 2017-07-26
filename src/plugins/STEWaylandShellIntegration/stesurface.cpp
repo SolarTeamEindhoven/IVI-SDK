@@ -3,6 +3,8 @@
 #include <QtWaylandClient/private/qwaylanddisplay_p.h>
 #include <QtWaylandClient/private/qwaylandextendedsurface_p.h>
 
+#include <QWindow>
+
 #include <STEShellManager>
 
 #include <iostream>
@@ -42,6 +44,11 @@ void STESurface::ste_shell_surface_configure(uint32_t width, uint32_t height, ui
     window()->configure(0, width, height);
 }
 
+void STESurface::ste_shell_surface_visibilityState(uint32_t visibilityState)
+{
+    ;
+}
+
 void STESurface::ste_shell_surface_broadcast_available_softkey(uint32_t softkey_id, const QString &hint)
 {
     qDebug() << "Available softkey with id:" << softkey_id << "and hint:" << hint;
@@ -65,7 +72,7 @@ void STESurface::setType(Qt::WindowType type, QtWaylandClient::QWaylandWindow *t
 
 void STESurface::setMaximized()
 {
-    QtWayland::ste_shell_surface::resize(state_maximal);
+    QtWayland::ste_shell_surface::resize(sizeState_maximal);
 }
 
 void STESurface::setFullscreen()
@@ -75,10 +82,10 @@ void STESurface::setFullscreen()
 
 void STESurface::setNormal()
 {
-    QtWayland::ste_shell_surface::resize(state_normal);
+    QtWayland::ste_shell_surface::resize(sizeState_normal);
 }
 
 void STESurface::setMinimized()
 {
-    QtWayland::ste_shell_surface::resize(state_minimal);
+    QtWayland::ste_shell_surface::resize(sizeState_minimal);
 }

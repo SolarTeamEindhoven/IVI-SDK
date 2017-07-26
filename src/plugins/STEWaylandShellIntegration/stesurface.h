@@ -26,8 +26,11 @@ public:
 
     void setType(Qt::WindowType type, QtWaylandClient::QWaylandWindow *transientParent) Q_DECL_OVERRIDE;
 
+    Q_ENUM(sizeState)
+    Q_ENUM(visibilityState)
 protected:
-    void ste_shell_surface_configure(uint32_t width, uint32_t height, uint32_t state) Q_DECL_OVERRIDE;
+    void ste_shell_surface_configure(uint32_t width, uint32_t height, uint32_t sizeState) Q_DECL_OVERRIDE;
+    void ste_shell_surface_visibilityState(uint32_t visibilityState) Q_DECL_OVERRIDE;
     void ste_shell_surface_broadcast_available_softkey(uint32_t softkey_id, const QString &hint) Q_DECL_OVERRIDE;
 
 private:

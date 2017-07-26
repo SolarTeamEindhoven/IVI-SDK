@@ -16,6 +16,7 @@ public:
     STESoftKeyWayland(bool hasSurface, struct ::ste_softkey* softkeyObj, STESoftKeyDescriptor* descriptor);
 
     bool isVisual() const Q_DECL_OVERRIDE;
+    State getState() const Q_DECL_OVERRIDE { return state; };
 
 protected:
     void ste_softkey_state_changed(uint32_t state) Q_DECL_OVERRIDE;
@@ -26,6 +27,7 @@ protected:
 private:
     bool initialized;
     bool hasSurface;
+    State state;
 };
 
 #endif // STESOFTKEY_H

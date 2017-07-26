@@ -20,6 +20,8 @@ public:
 
     STEShell* getShell() {return shell;}
 
+    STESurface* getSTESurface(QWindow* window) const;
+
     void registerWindowAsSoftKey(QWindow* window);
 
     static STEShellIntegration* getInstance();

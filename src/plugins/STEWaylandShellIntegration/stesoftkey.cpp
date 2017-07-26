@@ -18,9 +18,21 @@ bool STESoftKeyWayland::isVisual() const
     return hasSurface;
 }
 
-void STESoftKeyWayland::ste_softkey_state_changed(uint32_t state)
+void STESoftKeyWayland::ste_softkey_state_changed(uint32_t s)
 {
-//    emit stateChanged(state);
+    auto newState = static_cast<QtWayland::ste_softkey::state>(s);
+    switch(newState) {
+    case state_active:
+        state = State::Active;
+        break;
+    case state_inactive:
+        state = State::InActive;
+        break;
+    case state_outofscope:
+        state = State::OutOfScope;
+        break;
+    }
+    emit stateChanged();
 }
 
 void STESoftKeyWayland::ste_softkey_click()
