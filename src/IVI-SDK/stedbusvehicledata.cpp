@@ -17,7 +17,7 @@ void STEDBusVehicleData::registerVicleDataObject(STEVehicleData* obj)
     if(vehicleDataObjects.size() == 0)
     {
         QDBusConnection connection = STEDbusManager::instance()->connection();
-        dbusVehicleData = new nl::solarteameindhoven::vehicledata("nl.solarteameindhoven.ivi", "/VEHICLEDATA_" + key, connection, this);
+        dbusVehicleData = new nl::solarteameindhoven::vehicledata("nl.solarteameindhoven.ivi", "/VehicleData/" + key, connection, this);
         connect(dbusVehicleData, &nl::solarteameindhoven::vehicledata::valueChanged, this, &STEDBusVehicleData::dbusValueChanged);
     }
 
