@@ -2,6 +2,8 @@
 
 #include "stedbusmanager_p.h"
 
+QT_BEGIN_NAMESPACE
+
 STEDBusVehicleData::STEDBusVehicleData(const QString& key, QObject* parent)
     : QObject(parent)
     , key(key)
@@ -9,7 +11,7 @@ STEDBusVehicleData::STEDBusVehicleData(const QString& key, QObject* parent)
 
 }
 
-void STEDBusVehicleData::registerVicleDataObject(STEVehicleData* obj)
+void STEDBusVehicleData::registerVehicleDataObject(STEVehicleData* obj)
 {
     if(vehicleDataObjects.contains(obj))
         return;
@@ -24,7 +26,7 @@ void STEDBusVehicleData::registerVicleDataObject(STEVehicleData* obj)
     vehicleDataObjects.append(obj);
 }
 
-void STEDBusVehicleData::unregisterVicleDataObject(STEVehicleData* obj)
+void STEDBusVehicleData::unregisterVehicleDataObject(STEVehicleData* obj)
 {
     vehicleDataObjects.removeOne(obj);
 
@@ -53,3 +55,5 @@ void STEDBusVehicleData::dbusValueChanged(const QDBusVariant &value)
 {
     emit valueChanged(value.variant());
 }
+
+QT_END_NAMESPACE

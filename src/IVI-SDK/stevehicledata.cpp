@@ -26,7 +26,7 @@ void STEVehicleData::setKey(const QString& newKey)
     {
         qDebug() << "Deleting old DBUS object!";
         wasAvailable = true;
-        dbusVehicleData->unregisterVicleDataObject(this);
+        dbusVehicleData->unregisterVehicleDataObject(this);
         disconnect();
     }
 
@@ -36,7 +36,7 @@ void STEVehicleData::setKey(const QString& newKey)
     dbusVehicleData = STEDbusManager::instance()->getDBusVehicleData(key);
     if(dbusVehicleData != nullptr)
     {
-        dbusVehicleData->registerVicleDataObject(this);
+        dbusVehicleData->registerVehicleDataObject(this);
         connect(dbusVehicleData, &STEDBusVehicleData::valueChanged, this, &STEVehicleData::valueChanged);
     }
 

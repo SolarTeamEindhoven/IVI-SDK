@@ -3,6 +3,8 @@
 #include <QDebug>
 #include "stedbusmanager_p.h"
 
+QT_BEGIN_NAMESPACE
+
 static STEShellManager shellManagerInstance;
 
 STEShellManager::STEShellManager(QObject *parent)
@@ -17,3 +19,5 @@ STEShellManager* STEShellManager::instance()
 
     return &shellManagerInstance;
 }
+
+QT_END_NAMESPACE

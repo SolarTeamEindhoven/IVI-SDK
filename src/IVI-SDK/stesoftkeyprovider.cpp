@@ -2,6 +2,8 @@
 
 #include <QDebug>
 
+QT_BEGIN_NAMESPACE
+
 static STESoftKeyProviderWrapper softKeyProviderWrapper;
 static STESoftKeyProvider* globalInstance = nullptr;
 
@@ -62,3 +64,5 @@ void STESoftKeyProviderWrapper::setSoftKeyProvider(STESoftKeyProvider* instance)
     if(!instance->getSoftKeyDescriptors().isEmpty())
         emit softkeyDescriptorsChanged();
 }
+
+QT_END_NAMESPACE

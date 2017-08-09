@@ -1,6 +1,7 @@
 #include "stedbusmanager_p.h"
 
 #include "stedbusvehicledata_p.h"
+#include "stedbusvehiclesetting_p.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -30,6 +31,11 @@ QStringList STEDbusManager::getAvailableVehicleDataKeys() const
     return dbusManager.vehicle_data_keys();
 }
 
+QStringList STEDbusManager::getAvailableVehicleSettingKeys() const
+{
+    return dbusManager.vehicle_setting_keys();
+}
+
 STEDBusVehicleData* STEDbusManager::getDBusVehicleData(const QString& key)
 {
     auto it = availableVehicleData.find(key);
@@ -42,6 +48,23 @@ STEDBusVehicleData* STEDbusManager::getDBusVehicleData(const QString& key)
         STEDBusVehicleData* vehicleData = new STEDBusVehicleData(key, this);
         availableVehicleData.insert(key, vehicleData);
         return vehicleData;
+    }
+
+    return nullptr;
+}
+
+STEDBusVehicleSetting* STEDbusManager::getDBusVehicleSetting(const QString& key)
+{
+    auto it = availableVehicleSetting.find(key);
+
+    if(it != availableVehicleSetting.end())
+        return it.value();
+
+    if( getAvailableVehicleDataKeys().contains(key) )
+    {
+        STEDBusVehicleSetting* vehicleSetting = new STEDBusVehicleSetting(key, this);
+        availableVehicleSetting.insert(key, vehicleSetting);
+        return vehicleSetting;
     }
 
     return nullptr;

@@ -6,6 +6,8 @@
 
 #include "dbusvehicledata_interface.h"
 
+QT_BEGIN_NAMESPACE
+
 class STEVehicleData;
 
 class STEDBusVehicleData : public QObject
@@ -15,8 +17,8 @@ class STEDBusVehicleData : public QObject
 public:
     explicit STEDBusVehicleData(const QString& key, QObject* parent = 0);
 
-    void registerVicleDataObject(STEVehicleData* obj);
-    void unregisterVicleDataObject(STEVehicleData* obj);
+    void registerVehicleDataObject(STEVehicleData* obj);
+    void unregisterVehicleDataObject(STEVehicleData* obj);
 
     QVariant getValue();
 
@@ -30,5 +32,7 @@ private:
 
     void dbusValueChanged(const QDBusVariant &value);
 };
+
+QT_END_NAMESPACE
 
 #endif // STEDBUSVEHICLEDATA_H

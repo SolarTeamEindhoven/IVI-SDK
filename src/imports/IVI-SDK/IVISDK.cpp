@@ -1,6 +1,7 @@
 #include <QtQml/QQmlExtensionPlugin>
 #include <IVI-SDK/STESoftKey>
 #include <IVI-SDK/STEVehicleData>
+#include <IVI-SDK/STEVehicleSetting>
 
 #include "steapp.h"
 #include "stesoftkeyqml.h"
@@ -19,6 +20,7 @@ public:
         qmlRegisterType<STESoftKeyQml>(uri, 1, 0, "SoftKey");
         qmlRegisterType<STESoftKeyVisualQml>(uri, 1, 0, "SoftKeyVisual");
         qmlRegisterType<STEVehicleData>(uri, 1, 0, "VehicleData");
+        qmlRegisterType<STEVehicleSetting>(uri, 1, 0, "VehicleSetting");
     }
 
     void initializeEngine(QQmlEngine *engine, const char *uri)

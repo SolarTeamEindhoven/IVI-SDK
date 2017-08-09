@@ -12,6 +12,7 @@
 QT_BEGIN_NAMESPACE
 
 class STEDBusVehicleData;
+class STEDBusVehicleSetting;
 
 class STEDbusManager : public QObject
 {
@@ -24,12 +25,15 @@ public:
     QDBusConnection connection();
 
     QStringList getAvailableVehicleDataKeys() const;
+    QStringList getAvailableVehicleSettingKeys() const;
 
     STEDBusVehicleData* getDBusVehicleData(const QString& key);
+    STEDBusVehicleSetting* getDBusVehicleSetting(const QString& key);
 
 private:
     nl::solarteameindhoven::manager dbusManager;
     QMap<QString, STEDBusVehicleData*> availableVehicleData;
+    QMap<QString, STEDBusVehicleSetting*> availableVehicleSetting;
 };
 
 QT_END_NAMESPACE
