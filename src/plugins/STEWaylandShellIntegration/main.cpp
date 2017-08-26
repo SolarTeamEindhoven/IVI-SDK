@@ -79,8 +79,6 @@ QtWaylandClient::QWaylandShellIntegration* CustomIntegrationPlugin::create(const
     Q_UNUSED(key);
     Q_UNUSED(paramList);
 
-    qDebug() << "************* The Qt Custom Extension Example Plugin is active ************";
-
     extension_global = STEShellIntegration::getInstance();
 
     // We need a way for client apps to get hold of the extension. The proper API for this is
