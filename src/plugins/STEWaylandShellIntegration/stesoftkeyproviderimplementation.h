@@ -15,7 +15,7 @@ public:
 
     void addDescriptor(STESoftKeyDescriptor* descriptor);
 
-    static STESoftKeyProviderImplementation instance;
+    static STESoftKeyProviderImplementation& getInstance();
 
 private:
     QList<STESoftKeyDescriptor*> softKeyDescriptorList;

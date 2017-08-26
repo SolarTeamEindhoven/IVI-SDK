@@ -5,8 +5,6 @@
 #include "stesoftkey.h"
 #include "steshell.h"
 
-STESoftKeyProviderImplementation STESoftKeyProviderImplementation::instance;
-
 STESoftKeyProviderImplementation::STESoftKeyProviderImplementation(QObject *parent)
     : STESoftKeyProvider(parent)
 {
@@ -45,4 +43,9 @@ void STESoftKeyProviderImplementation::addDescriptor(STESoftKeyDescriptor* descr
 {
     softKeyDescriptorList.append(descriptor);
     emit softKeyDescriptorsChanged();
+}
+
+STESoftKeyProviderImplementation& STESoftKeyProviderImplementation::getInstance() {
+    static STESoftKeyProviderImplementation instance;
+    return instance;
 }

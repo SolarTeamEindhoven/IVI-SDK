@@ -4,7 +4,6 @@
 
 QT_BEGIN_NAMESPACE
 
-static STESoftKeyProviderWrapper softKeyProviderWrapper;
 static STESoftKeyProvider* globalInstance = nullptr;
 
 STESoftKeyProviderWrapper::STESoftKeyProviderWrapper(QObject *parent)
@@ -39,6 +38,7 @@ STESoftKey* STESoftKeyProviderWrapper::createSoftKey(QWindow* window, STESoftKey
 
 STESoftKeyProviderWrapper* STESoftKeyProviderWrapper::getInstance()
 {
+    static STESoftKeyProviderWrapper softKeyProviderWrapper;
     return &softKeyProviderWrapper;
 }
 

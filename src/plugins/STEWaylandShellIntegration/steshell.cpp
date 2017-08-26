@@ -11,20 +11,18 @@
 
 #include <QDebug>
 
-STEShellIntegration* STEShellIntegration::instance = nullptr;
-
 STEShellIntegration::STEShellIntegration()
     : shell(NULL)
     , lastSurfaceId(0)
 {
-    STESoftKeyProviderWrapper::getInstance()->setSoftKeyProvider(&STESoftKeyProviderImplementation::instance);
+    STESoftKeyProviderWrapper::getInstance()->setSoftKeyProvider(&STESoftKeyProviderImplementation::getInstance());
 }
 
 bool STEShellIntegration::initialize(QtWaylandClient::QWaylandDisplay *display)
 {
     display->addRegistryListener(&STEShellIntegration::registrySTE, this);
 
-    return true;
+    return QtWaylandClient::QWaylandShellIntegration::initialize(display);
 }
 
 QtWaylandClient::QWaylandShellSurface* STEShellIntegration::createShellSurface(QtWaylandClient::QWaylandWindow* waylandWindow)

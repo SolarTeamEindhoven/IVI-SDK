@@ -56,7 +56,7 @@ void STESurface::ste_shell_surface_broadcast_available_softkey(uint32_t softkey_
     descriptor->id = softkey_id;
     descriptor->hint = hint;
 
-    STESoftKeyProviderImplementation& softKeyProvider = STESoftKeyProviderImplementation::instance;
+    STESoftKeyProviderImplementation& softKeyProvider = STESoftKeyProviderImplementation::getInstance();
     softKeyProvider.addDescriptor(descriptor);
 
 //    STESoftKeyWayland* softKey = new STESoftKeyWayland(this, softkey_id, hint);

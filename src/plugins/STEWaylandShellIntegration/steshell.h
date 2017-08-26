@@ -37,7 +37,6 @@ private:
     uint32_t getNextUniqueSurfaceId();
 
     static void registrySTE(void *data, struct wl_registry *registry, uint32_t id,  const QString &interface, uint32_t version);
-    static STEShellIntegration* instance;
 };
 
 #endif // STESHELL_H
