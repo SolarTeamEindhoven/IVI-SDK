@@ -8,28 +8,28 @@ examplesinstallpath                             = IVI-SDK
 
 qhp.projects                                       = IVI-SDK
 
-qhp.IVI-SDK.file                              = IVI-SDK.qhp
-qhp.IVI-SDK.namespace                         = org.qt-project.IVI-SDK.$QT_VERSION_TAG
-qhp.IVI-SDK.virtualFolder                     = IVI-SDK
-qhp.IVI-SDK.indexTitle                        = STE SDK
-qhp.IVI-SDK.indexRoot                         =
-qhp.IVI-SDK.filterAttributes                  = IVI-SDK $QT_VERSION qtrefdoc
-qhp.IVI-SDK.customFilters.Qt.name             = IVI-SDK $QT_VERSION
-qhp.IVI-SDK.customFilters.Qt.filterAttributes = IVI-SDK $QT_VERSION
+qhp.IVI_SDK.file                              = IVI-SDK.qhp
+qhp.IVI_SDK.namespace                         = org.qt-project.IVI-SDK.$QT_VERSION_TAG
+qhp.IVI_SDK.virtualFolder                     = IVI-SDK
+qhp.IVI_SDK.indexTitle                        = STE SDK
+qhp.IVI_SDK.indexRoot                         =
+qhp.IVI_SDK.filterAttributes                  = IVI-SDK $QT_VERSION qtrefdoc
+qhp.IVI_SDK.customFilters.Qt.name             = IVI-SDK $QT_VERSION
+qhp.IVI_SDK.customFilters.Qt.filterAttributes = IVI-SDK $QT_VERSION
 
-qhp.IVI-SDK.subprojects                       = qmltypes classes examples
-qhp.IVI-SDK.subprojects.qmltypes.title        = QML Types
-qhp.IVI-SDK.subprojects.qmltypes.indexTitle   = STE SDK QML Types
-qhp.IVI-SDK.subprojects.qmltypes.selectors    = qmlclass
-qhp.IVI-SDK.subprojects.qmltypes.sortPages    = true
-qhp.IVI-SDK.subprojects.classes.title         = C++ Classes
-qhp.IVI-SDK.subprojects.classes.indexTitle    = STE SDK C++ Classes
-qhp.IVI-SDK.subprojects.classes.selectors     = class fake:headerfile
-qhp.IVI-SDK.subprojects.classes.sortPages     = true
-qhp.IVI-SDK.subprojects.examples.title        = Examples
-qhp.IVI-SDK.subprojects.examples.indexTitle   = STE SDK Examples
-qhp.IVI-SDK.subprojects.examples.selectors    = fake:example
-qhp.IVI-SDK.subprojects.examples.sortPages    = true
+qhp.IVI_SDK.subprojects                       = qmltypes classes examples
+qhp.IVI_SDK.subprojects.qmltypes.title        = QML Types
+qhp.IVI_SDK.subprojects.qmltypes.indexTitle   = STE SDK QML Types
+qhp.IVI_SDK.subprojects.qmltypes.selectors    = qmlclass
+qhp.IVI_SDK.subprojects.qmltypes.sortPages    = true
+qhp.IVI_SDK.subprojects.classes.title         = C++ Classes
+qhp.IVI_SDK.subprojects.classes.indexTitle    = STE SDK C++ Classes
+qhp.IVI_SDK.subprojects.classes.selectors     = class fake:headerfile
+qhp.IVI_SDK.subprojects.classes.sortPages     = true
+qhp.IVI_SDK.subprojects.examples.title        = Examples
+qhp.IVI_SDK.subprojects.examples.indexTitle   = STE SDK Examples
+qhp.IVI_SDK.subprojects.examples.selectors    = fake:example
+qhp.IVI_SDK.subprojects.examples.sortPages    = true
 
 
 headerdirs += ../ \
