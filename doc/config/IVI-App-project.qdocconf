@@ -1,0 +1,33 @@
+include($QT_INSTALL_DOCS/global/qt-cpp-defines.qdocconf)
+
+project                      = IVI-App
+description                  = IVI App Documentation
+version                      = $QT_VERSION
+
+sourcedirs                  += .. ../../src/lib/ ../../src/imports
+headerdirs                  += ../../src/lib/
+
+indexes                      = $QT_INSTALL_DOCS/qtcore/qtcore.index
+
+qhp.projects                 = IVI-App
+
+qhp.QtOTA.file                = IVI-App.qhp
+qhp.QtOTA.namespace           = nl.solarteameindhoven.layr.$QT_VERSION_TAG
+qhp.QtOTA.virtualFolder       = IVI-App
+qhp.QtOTA.indexTitle          = IVI App
+qhp.QtOTA.indexRoot           = IVI App
+
+qhp.QtOTA.subprojects         = cpp qml
+
+qhp.QtOTA.subprojects.cpp.title         = C++ Classes
+qhp.QtOTA.subprojects.cpp.indexTitle    = IVI App C++ Classes
+qhp.QtOTA.subprojects.cpp.selectors     = module
+qhp.QtOTA.subprojects.cpp.sortPages     = true
+
+qhp.QtOTA.subprojects.qml.title         = QML Types
+qhp.QtOTA.subprojects.qml.indexTitle    = IVI App QML Types
+qhp.QtOTA.subprojects.qml.selectors     = qmlmodule
+qhp.QtOTA.subprojects.qml.sortPages     = true
+
+macro.B2Q                    = "Boot to Qt"
+include(navigation.qdocconf)

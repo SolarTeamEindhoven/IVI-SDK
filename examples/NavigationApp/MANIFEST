@@ -1,0 +1,19 @@
+<package>
+        <name lang="en_US">Navigation APP</name>
+        <description lang="en_US">Unofficial Google Maps app.</description>
+<!--	<icon lang=""></icon> -->
+        <authors>
+                <author>
+                        <name>Steven van der Schoot</name>
+                        <email>steven.vanderschoot@solarteameindhoven.nl</email>
+                        <company website="http://solarteameindhoven.nl">Solar Team Eindhoven</company>
+                </author>
+        </authors>
+        <website></website>
+        <categories>
+                <category>Navigation</category>
+        </categories>
+        <run>
+                <executable>NavigationApp</executable>
+        </run>
+</package>

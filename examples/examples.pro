@@ -1,3 +1,5 @@
 TEMPLATE = subdirs
-
-SUBDIRS += IVI-SDK
+SUBDIRS = \
+    InfoApp \
+    MusicApp \
+    NavigationApp

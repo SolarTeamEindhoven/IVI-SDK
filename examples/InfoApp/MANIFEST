@@ -1,0 +1,19 @@
+<package>
+        <name lang="en_US">Vehicle information APP</name>
+        <description lang="en_US">Show information about the state of the vehicle.</description>
+<!--	<icon lang=""></icon> -->
+        <authors>
+                <author>
+                        <name>Steven van der Schoot</name>
+                        <email>steven.vanderschoot@solarteameindhoven.nl</email>
+                        <company website="http://solarteameindhoven.nl">Solar Team Eindhoven</company>
+                </author>
+        </authors>
+        <website></website>
+        <categories>
+                <category>Information</category>
+        </categories>
+        <run>
+                <executable>InfoApp</executable>
+        </run>
+</package>

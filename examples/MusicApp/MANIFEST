@@ -1,0 +1,19 @@
+<package>
+        <name lang="en_US">Music app</name>
+        <description lang="en_US">Unofficial  Spotify app.</description>
+<!--	<icon lang=""></icon> -->
+        <authors>
+                <author>
+                        <name>Steven van der Schoot</name>
+                        <email>steven.vanderschoot@solarteameindhoven.nl</email>
+                        <company website="http://solarteameindhoven.nl">Solar Team Eindhoven</company>
+                </author>
+        </authors>
+        <website></website>
+        <categories>
+                <category>Music</category>
+        </categories>
+        <run>
+                <executable>MusicApp</executable>
+        </run>
+</package>

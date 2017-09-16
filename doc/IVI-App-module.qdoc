@@ -1,0 +1,11 @@
+/*!
+    \module IVI-App
+    \qtvariable IVI-App
+    \title IVI App C++ Classes
+*/
+
+/*!
+    \qmlmodule ivi.app 1.0
+    \title IVI App QML Types
+*/
+
