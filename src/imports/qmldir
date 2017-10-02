@@ -1,2 +1,4 @@
 module ivi.app
 plugin IVIAppPlugin
+classname IVIAppPlugin
+typeinfo plugins.qmltypes
