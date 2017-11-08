@@ -25,6 +25,41 @@ ApplicationWindow {
         zoomLevel: 19
         tilt: maximumTilt
 
+        MapParameter {
+            type: "layer"
+
+            property var name: "3d-buildings"
+            property var layerType: "fill-extrusion"
+            property var source: "composite"
+            property var sourceLayer: "building"
+            property var minzoom: 15
+
+            property var before: "housenum-label"
+        }
+
+        MapParameter {
+            type: "filter"
+
+            property var layer: "3d-buildings"
+            property var filter: ["==", "extrude", "true"]
+        }
+
+        MapParameter {
+            type: "paint"
+
+            property var layer: "3d-buildings"
+            property var fillExtrusionHeight: {
+                "type": "identity",
+                "property": "height"
+            }
+            property var fillExtrusionColor: "#aaa"
+            property var fillExtrusionBase: {
+                "type": "identity",
+                "property": "min_height"
+            }
+            property var fillExtrusionOpacity: 0.6
+        }
+
         MapQuickItem {
             coordinate: QtPositioning.coordinate(51.447862, 5.4999)
             sourceItem: Image {
